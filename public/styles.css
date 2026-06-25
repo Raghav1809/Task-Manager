@@ -1,0 +1,247 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --primary: #2d6cdf;
+  --primary-dark: #274eb8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+header p {
+  margin: 10px auto 0;
+  max-width: 640px;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 20px 56px rgba(15, 23, 42, 0.08);
+}
+
+.auth-card {
+  max-width: 420px;
+  margin: 0 auto 24px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.auth-tabs button {
+  flex: 1;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.auth-tabs button.active,
+.auth-tabs button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.form-card,
+.task-form,
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-primary,
+.btn-secondary {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #eef2ff;
+  color: var(--text);
+}
+
+.btn-secondary:hover,
+.btn-primary:hover {
+  opacity: 0.95;
+}
+
+.status-message {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.task-area {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 18px;
+}
+
+.task-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.task-item {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #f8fafc;
+}
+
+.task-item:last-child {
+  margin-bottom: 0;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.task-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.task-actions button {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+.task-actions .btn-delete {
+  background: #f97316;
+  color: white;
+}
+
+.task-actions .btn-edit {
+  background: #10b981;
+  color: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .task-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .auth-tabs {
+    flex-direction: column;
+  }
+
+  .task-actions button {
+    min-width: 100%;
+  }
+}
